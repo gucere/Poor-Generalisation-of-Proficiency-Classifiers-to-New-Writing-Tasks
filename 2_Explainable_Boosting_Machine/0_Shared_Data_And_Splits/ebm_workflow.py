@@ -1463,10 +1463,14 @@ REPORT_GROUPS = (
     ('6_Duplicate_Features_Filtered/3_Duplicates_And_Length_Correlated',
      {'combined_without_length_correlated_and_duplicate_features': 'combined'}),
 )
-OTHER_MODELS = '7_Other_Models'
+OTHER_MODELS = '8_Other_Models'
+# The paper's strictest model also gets a folder of its own, so it can be found without knowing its validation
+# rank; its numbered folder in 6_Duplicate_Features_Filtered stays, and the two hold the same tables.
+STRICTEST_FAMILY = 'combined_without_length_correlated_and_duplicate_features'
+STRICTEST_FOLDER = '7_Strictest_Model'
 ALGORITHM_FOLDERS = {'classifier': '1_Classifier', 'regressor': '2_Regressor'}
 REPORT_GROUP_FOLDERS = ({part for group, _ in REPORT_GROUPS for part in group.split('/')}
-                        | {OTHER_MODELS, *ALGORITHM_FOLDERS.values()})
+                        | {OTHER_MODELS, STRICTEST_FOLDER, *ALGORITHM_FOLDERS.values()})
 
 
 def ranked_experiment_folders(quality, experiments, task):
@@ -1487,6 +1491,24 @@ def ranked_experiment_folders(quality, experiments, task):
     return folders
 
 
+def strictest_model_folders(experiments, task):
+    """The strictest model's own report folder: 7_Strictest_Model for the CEFR task, and
+    1_Classifier/7_Strictest_Model and 2_Regressor/7_Strictest_Model for the level task."""
+    folders = {}
+    for name in sorted(set(experiments)):
+        algorithm, family = name.split('__', 1)
+        if family == STRICTEST_FAMILY:
+            folders[name] = (f'{ALGORITHM_FOLDERS[algorithm]}/' if task == 'level' else '') + STRICTEST_FOLDER
+    return folders
+
+
+def strictest_report_folders(destination):
+    """The 7_Strictest_Model folders of a report section, outside temporary staging folders."""
+    destination = Path(destination)
+    return [path for path in destination.rglob(STRICTEST_FOLDER) if path.is_dir()
+            and not any(part.startswith('.') for part in path.relative_to(destination).parts)]
+
+
 def remove_old_report_files(root, paths):
     root = Path(root).resolve()
     for path in paths:
@@ -1502,16 +1524,26 @@ def remove_old_report_files(root, paths):
             folder.rmdir()
 
 
+def report_suffix(folder):
+    """all_experiments, the number of a numbered model folder, or strictest_classifier / strictest_regressor:
+    the level task has two 7_Strictest_Model folders, and Excel cannot open two files of the same name at once."""
+    path = Path(folder)
+    if path.name == '0_All_Experiments':return 'all_experiments'
+    if path.name == STRICTEST_FOLDER:
+        return 'strictest_regressor' if path.parent.name == ALGORITHM_FOLDERS['regressor'] else 'strictest_classifier'
+    return path.name.split('_', 1)[0]
+
+
 def grouped_report_name(name, folder, task):
-    """performance_metrics.csv becomes performance_metrics_cefr_05.csv in 1_Top_Performing/05_combined and
+    """performance_metrics.csv becomes performance_metrics_cefr_05.csv in 1_Top_Performing/05_combined,
+    performance_metrics_cefr_strictest_classifier.csv in 7_Strictest_Model and
     performance_metrics_cefr_all_experiments.csv in 0_All_Experiments.
 
     The folder already names the model; repeating it pushed long paths past Excel's 218-character limit.
     The task keeps CEFR and level copies apart, so Excel can open any two reports at once.
     """
     path = Path(name)
-    suffix = 'all_experiments' if folder == '0_All_Experiments' else Path(folder).name.split('_', 1)[0]
-    return f'{path.stem}_{task}_{suffix}{path.suffix}'
+    return f'{path.stem}_{task}_{report_suffix(folder)}{path.suffix}'
 
 
 def former_report_name(name, folder):
@@ -1525,18 +1557,18 @@ def write_grouped_reports(destination, tables, quality, experiments, task, obsol
     folders = ranked_experiment_folders(quality, experiments, task)
     outputs = {f'0_All_Experiments/{grouped_report_name(name, "0_All_Experiments", task)}': table
                for name, table in tables.items()}
-    for experiment, folder in folders.items():
+    for experiment, folder in [*folders.items(), *strictest_model_folders(experiments, task).items()]:
         for name, table in tables.items():
             outputs[f'{folder}/{grouped_report_name(name, folder, task)}'] = table[table.experiment.eq(experiment)]
     save_report_tables(destination, outputs)
     obsolete = []
     # Model folders at any depth: the grouped layout, the earlier flat one and folders left by rank changes.
-    for folder in [destination/'0_All_Experiments', *model_folders(destination),
+    for folder in [destination/'0_All_Experiments', *model_folders(destination), *strictest_report_folders(destination),
                    *(path for path in destination.iterdir() if path.is_dir() and re.fullmatch(r'(?:classifier|regressor)__[a-z0-9_]+', path.name))]:
         if not folder.is_dir():continue
         relative = folder.relative_to(destination).as_posix()
         for name in set(tables) | set(obsolete_names):
-            for filename in (name, former_report_name(name, folder.name), grouped_report_name(name, folder.name, task)):
+            for filename in (name, former_report_name(name, folder.name), grouped_report_name(name, relative, task)):
                 if f'{relative}/{filename}' not in outputs:
                     obsolete.append(folder/filename)
     remove_old_report_files(destination, obsolete)
@@ -1545,8 +1577,10 @@ def write_grouped_reports(destination, tables, quality, experiments, task, obsol
 
 # One table per classifier output inside the model's numbered folder, named like the other reports:
 # 1_Top_Performing/01_complexity/Per_CEFR/feature_contributions_cefr_01_A1.csv or
-# 1_Classifier/1_Top_Performing/01_combined/Per_Level/feature_contributions_level_01_12.csv.
-OUTPUT_TABLE_NAME = re.compile(r'feature_contributions_(?:cefr|level)_\d+_(?:[ABC][12]|[0-9]{1,2})\.csv')
+# 1_Classifier/1_Top_Performing/01_combined/Per_Level/feature_contributions_level_01_12.csv, and in the
+# strictest model's own folder 1_Classifier/7_Strictest_Model/Per_Level/feature_contributions_level_strictest_classifier_12.csv.
+OUTPUT_TABLE_NAME = re.compile(
+    r'feature_contributions_(?:cefr|level)_(?:\d+|strictest_classifier|strictest_regressor)_(?:[ABC][12]|[0-9]{1,2})\.csv')
 OUTPUT_TABLE_FOLDERS = ('Per_CEFR', 'Per_Level')
 # The previous layout collected the tables in one Per_CEFR or Per_Level folder per task, named by model.
 FLAT_OUTPUT_TABLE_NAME = re.compile(r'feature_contributions_classifier__[a-z0-9_]+_(?:[ABC][12]|[0-9]{1,2})\.csv')
@@ -1578,11 +1612,11 @@ def write_output_contribution_tables(destination, contributions, folders, task):
     Regressors have one numerical output and baselines have no features, so neither gets these tables.
     """
     outputs = {}
-    for experiment, folder in folders.items():
+    for experiment, folder in [*folders.items(), *strictest_model_folders(folders, task).items()]:
         rows = contributions[contributions.experiment.eq(experiment)]
         if not experiment.startswith('classifier__') or rows.empty:continue
         for output, group in rows.groupby('output', sort=False):
-            name = f'feature_contributions_{task}_{Path(folder).name.split("_", 1)[0]}_{output}.csv'
+            name = f'feature_contributions_{task}_{report_suffix(folder)}_{output}.csv'
             if not OUTPUT_TABLE_NAME.fullmatch(name):raise ValueError(f'Unexpected model output {output!r} in {experiment}.')
             subfolder = 'Per_CEFR' if str(output) in LABELS else 'Per_Level'
             outputs[f'{folder}/{subfolder}/{name}'] = (
@@ -1590,7 +1624,7 @@ def write_output_contribution_tables(destination, contributions, folders, task):
                 .rename(columns={'feature': 'feature_name', 'mean_absolute_contribution': 'contribution'})
                 .sort_values(['contribution', 'feature_name'], ascending=[False, True]))
     save_report_tables(destination, outputs)
-    models = model_folders(destination)
+    models = model_folders(destination) + strictest_report_folders(destination)
     stale = [path for folder in models for subfolder in OUTPUT_TABLE_FOLDERS if (folder / subfolder).is_dir()
              for path in (folder / subfolder).iterdir()
              if path.is_file() and OUTPUT_TABLE_NAME.fullmatch(path.name)
@@ -2062,10 +2096,27 @@ def run_tests():
                     folders = ranked_experiment_folders(quality,primary.experiment,task)
                     # Grouped folders; the level task first splits classifiers and regressors.
                     tops = {'cefr':{'0_All_Experiments','1_Top_Performing','2_Length_Features_Filtered',
-                                    '3_Mutual_Information_And_Information_Gain','5_Simple_Models','6_Duplicate_Features_Filtered'},
+                                    '3_Mutual_Information_And_Information_Gain','5_Simple_Models','6_Duplicate_Features_Filtered',
+                                    STRICTEST_FOLDER},
                             'level':{'0_All_Experiments','1_Classifier','2_Regressor'}}[task]
                     for section in (performance,root/task/'3_Feature_Contributions'):
                         self.assertEqual({path.name for path in section.iterdir() if path.is_dir()},tops)
+                    # The strictest model's own folder repeats its numbered folder, file for file, under fixed names.
+                    strictest = strictest_model_folders(primary.experiment,task)
+                    self.assertEqual(set(strictest),{name for name in primary.experiment if name.split('__',1)[1]==STRICTEST_FAMILY})
+                    self.assertTrue(strictest)
+                    for name,own in strictest.items():
+                        algorithm = name.split('__',1)[0]
+                        self.assertEqual(own,{'cefr':STRICTEST_FOLDER,'level':f'{ALGORITHM_FOLDERS[algorithm]}/{STRICTEST_FOLDER}'}[task])
+                        number = Path(folders[name]).name.split('_',1)[0]
+                        for section in (performance,root/task/'3_Feature_Contributions'):
+                            numbered = {path.relative_to(section/folders[name]).as_posix().replace(f'_{task}_{number}',f'_{task}_{report_suffix(own)}'):path
+                                        for path in (section/folders[name]).rglob('*.csv')}
+                            copies = {path.relative_to(section/own).as_posix():path for path in (section/own).rglob('*.csv')}
+                            self.assertTrue(copies)
+                            self.assertEqual(sorted(copies),sorted(numbered))
+                            for relative,path in copies.items():
+                                self.assertEqual(path.read_bytes(),numbered[relative].read_bytes())
                     prefix = '1_Classifier/' if task=='level' else ''
                     self.assertEqual(folders['classifier__combined_without_length_features'],
                         f"{prefix}2_Length_Features_Filtered/1_Without_Length_Features/{quality['classifier__combined_without_length_features']:02d}_combined")
