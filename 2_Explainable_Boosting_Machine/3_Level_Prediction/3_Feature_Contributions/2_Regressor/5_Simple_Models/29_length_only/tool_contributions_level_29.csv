@@ -1,0 +1,11 @@
+model_validation_rank,experiment,output,tool_rank,tool,features,contribution,share
+29,regressor__length_only,overall,1,LCA,5,1.3435579647655456,0.6225061029938805
+29,regressor__length_only,overall,2,POLKE,1,0.3159022222233559,0.14636589298005037
+29,regressor__length_only,overall,3,TAALES,1,0.3006984122941793,0.1393215638793532
+29,regressor__length_only,overall,4,L2SCA,1,0.1072606329687491,0.04969670113613934
+29,regressor__length_only,overall,5,TAASSC,1,0.0908856555297333,0.04210973901057653
+29,regressor__length_only,numerical_level,1,LCA,5,1.3435579647655456,0.6225061029938805
+29,regressor__length_only,numerical_level,2,POLKE,1,0.3159022222233559,0.14636589298005037
+29,regressor__length_only,numerical_level,3,TAALES,1,0.3006984122941793,0.1393215638793532
+29,regressor__length_only,numerical_level,4,L2SCA,1,0.1072606329687491,0.04969670113613934
+29,regressor__length_only,numerical_level,5,TAASSC,1,0.0908856555297333,0.04210973901057653

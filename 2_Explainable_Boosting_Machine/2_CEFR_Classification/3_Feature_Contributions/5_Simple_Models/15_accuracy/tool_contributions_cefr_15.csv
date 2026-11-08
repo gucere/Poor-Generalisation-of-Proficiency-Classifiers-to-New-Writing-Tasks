@@ -1,0 +1,7 @@
+model_validation_rank,experiment,output,tool_rank,tool,features,contribution,share
+15,classifier__accuracy,overall,1,ERRANT,69,2.456266761165204,1.0
+15,classifier__accuracy,A1,1,ERRANT,69,3.8656467113896555,1.0
+15,classifier__accuracy,A2,1,ERRANT,69,1.7653968748442666,1.0
+15,classifier__accuracy,B1,1,ERRANT,69,0.7949520560643274,1.0
+15,classifier__accuracy,B2,1,ERRANT,69,1.779278386891201,1.0
+15,classifier__accuracy,C1,1,ERRANT,69,4.07605977663657,1.0

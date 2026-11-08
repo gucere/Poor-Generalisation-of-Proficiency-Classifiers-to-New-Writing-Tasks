@@ -1,0 +1,15 @@
+model_validation_rank,experiment,output,tool_rank,tool,features,contribution,share
+16,regressor__combined,overall,1,TAALES,485,0.6674737227209094,0.26466866446228665
+16,regressor__combined,overall,2,POLKE,618,0.560266215187305,0.22215842492269386
+16,regressor__combined,overall,3,TAASSC,139,0.5325077518394433,0.2111515565296503
+16,regressor__combined,overall,4,LCA,33,0.43576037260273154,0.17278899815293125
+16,regressor__combined,overall,5,TAALES_COVERAGE,352,0.1998324765591554,0.079238167566362
+16,regressor__combined,overall,6,L2SCA,23,0.1062659857748312,0.04213690453332339
+16,regressor__combined,overall,7,ERRANT,69,0.0198154568126803,0.007857283832752632
+16,regressor__combined,numerical_level,1,TAALES,485,0.6674737227209094,0.26466866446228665
+16,regressor__combined,numerical_level,2,POLKE,618,0.560266215187305,0.2221584249226938
+16,regressor__combined,numerical_level,3,TAASSC,139,0.5325077518394433,0.21115155652965026
+16,regressor__combined,numerical_level,4,LCA,33,0.43576037260273154,0.17278899815293122
+16,regressor__combined,numerical_level,5,TAALES_COVERAGE,352,0.1998324765591554,0.07923816756636198
+16,regressor__combined,numerical_level,6,L2SCA,23,0.1062659857748312,0.04213690453332338
+16,regressor__combined,numerical_level,7,ERRANT,69,0.0198154568126803,0.00785728383275263

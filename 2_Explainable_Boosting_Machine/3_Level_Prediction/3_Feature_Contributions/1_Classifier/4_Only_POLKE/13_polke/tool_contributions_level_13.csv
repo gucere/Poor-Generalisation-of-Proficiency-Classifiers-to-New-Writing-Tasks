@@ -1,0 +1,17 @@
+model_validation_rank,experiment,output,tool_rank,tool,features,contribution,share
+13,classifier__polke,overall,1,POLKE,618,8.419250652947913,1.0
+13,classifier__polke,1,1,POLKE,618,15.542430242685487,1.0
+13,classifier__polke,2,1,POLKE,618,7.684373168548375,1.0
+13,classifier__polke,3,1,POLKE,618,7.599042366165783,1.0
+13,classifier__polke,4,1,POLKE,618,5.251196524731711,1.0
+13,classifier__polke,5,1,POLKE,618,3.8753842818147044,1.0
+13,classifier__polke,6,1,POLKE,618,3.197904114195753,1.0
+13,classifier__polke,7,1,POLKE,618,3.0682184435109017,1.0
+13,classifier__polke,8,1,POLKE,618,2.593802787668087,1.0
+13,classifier__polke,9,1,POLKE,618,3.447473846723848,1.0
+13,classifier__polke,10,1,POLKE,618,5.845366933989474,1.0
+13,classifier__polke,11,1,POLKE,618,7.0561888700885245,1.0
+13,classifier__polke,12,1,POLKE,618,7.498600894590244,1.0
+13,classifier__polke,13,1,POLKE,618,8.947251263581402,1.0
+13,classifier__polke,14,1,POLKE,618,21.759262958636263,1.0
+13,classifier__polke,15,1,POLKE,618,22.922263097288127,1.0

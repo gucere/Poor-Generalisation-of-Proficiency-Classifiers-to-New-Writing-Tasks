@@ -1,0 +1,13 @@
+model_validation_rank,experiment,output,tool_rank,tool,features,contribution,share
+26,regressor__training_mutual_information_features,overall,1,TAALES,73,0.8036879477846433,0.3233520435111187
+26,regressor__training_mutual_information_features,overall,2,TAASSC,28,0.5121923633431591,0.2060730757681825
+26,regressor__training_mutual_information_features,overall,3,LCA,15,0.4540856810252146,0.18269470544304553
+26,regressor__training_mutual_information_features,overall,4,POLKE,20,0.4139019459386326,0.16652736973523488
+26,regressor__training_mutual_information_features,overall,5,TAALES_COVERAGE,51,0.17633567769367722,0.07094607040374236
+26,regressor__training_mutual_information_features,overall,6,L2SCA,13,0.12528538579263246,0.050406735138676
+26,regressor__training_mutual_information_features,numerical_level,1,TAALES,73,0.8036879477846433,0.3233520435111187
+26,regressor__training_mutual_information_features,numerical_level,2,TAASSC,28,0.5121923633431591,0.2060730757681825
+26,regressor__training_mutual_information_features,numerical_level,3,LCA,15,0.4540856810252146,0.18269470544304553
+26,regressor__training_mutual_information_features,numerical_level,4,POLKE,20,0.4139019459386326,0.16652736973523488
+26,regressor__training_mutual_information_features,numerical_level,5,TAALES_COVERAGE,51,0.17633567769367722,0.07094607040374236
+26,regressor__training_mutual_information_features,numerical_level,6,L2SCA,13,0.12528538579263246,0.050406735138676

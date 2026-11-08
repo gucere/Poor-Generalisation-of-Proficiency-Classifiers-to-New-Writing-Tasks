@@ -1,0 +1,13 @@
+model_validation_rank,experiment,output,tool_rank,tool,features,contribution,share
+24,regressor__training_information_gain_features,overall,1,TAALES,66,0.7271152940577715,0.29050720392132934
+24,regressor__training_information_gain_features,overall,2,TAASSC,33,0.5990044458395598,0.2393225780277286
+24,regressor__training_information_gain_features,overall,3,LCA,15,0.44581534129533534,0.17811833876052516
+24,regressor__training_information_gain_features,overall,4,POLKE,27,0.36839735768136433,0.14718723039748874
+24,regressor__training_information_gain_features,overall,5,TAALES_COVERAGE,47,0.18391439368267584,0.0734800336429118
+24,regressor__training_information_gain_features,overall,6,L2SCA,12,0.17866973626847693,0.0713846152500164
+24,regressor__training_information_gain_features,numerical_level,1,TAALES,66,0.7271152940577715,0.29050720392132934
+24,regressor__training_information_gain_features,numerical_level,2,TAASSC,33,0.5990044458395598,0.2393225780277286
+24,regressor__training_information_gain_features,numerical_level,3,LCA,15,0.44581534129533534,0.17811833876052516
+24,regressor__training_information_gain_features,numerical_level,4,POLKE,27,0.36839735768136433,0.14718723039748874
+24,regressor__training_information_gain_features,numerical_level,5,TAALES_COVERAGE,47,0.18391439368267584,0.0734800336429118
+24,regressor__training_information_gain_features,numerical_level,6,L2SCA,12,0.17866973626847693,0.0713846152500164

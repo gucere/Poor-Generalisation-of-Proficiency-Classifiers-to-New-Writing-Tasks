@@ -1,0 +1,10 @@
+feature_name,contribution
+complexity__TAALES__Word Count,1.2140716077994795
+complexity__LCA__ndw,1.148478032944937
+complexity__LCA__lextokens,1.128494490730037
+complexity__LCA__wordtypes,1.0597658637056862
+complexity__LCA__lextypes,0.7566577823043261
+complexity__POLKE__word_count,0.309458346202345
+complexity__LCA__wordtokens,0.2842840745662005
+complexity__TAASSC__nwords,0.1805869968037202
+complexity__L2SCA__W,0.1654443687465012

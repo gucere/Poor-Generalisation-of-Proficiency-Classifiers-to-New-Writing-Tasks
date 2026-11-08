@@ -1,0 +1,136 @@
+model_validation_rank,experiment,feature,output,mean_absolute_contribution,overall_mean_absolute_contribution,overall_feature_rank
+27,classifier__length_only,complexity__LCA__lextokens,1,0.6855364855777288,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,2,1.4215570551379255,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,3,2.0872184241058878,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,4,0.6282116286188155,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,5,0.221554054134563,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,6,0.6034602695314769,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,7,0.3903683027538009,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,8,0.3095564482102385,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,9,0.3854492210193267,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,10,0.2137961138453629,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,11,0.883922930169881,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,12,1.2382309700457546,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,13,0.7053440991902656,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,14,2.035788150241938,0.9580070867306686,1
+27,classifier__length_only,complexity__LCA__lextokens,15,2.5601121483770624,0.9580070867306686,1
+27,classifier__length_only,complexity__POLKE__word_count,1,2.072810247746606,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,2,0.3961783364334692,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,3,0.6885139945121654,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,4,0.6017401037095678,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,5,0.769457857522651,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,6,1.0770680190761284,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,7,0.3609238405293261,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,8,0.3453652386205132,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,9,0.4144612460371803,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,10,0.6003902912455387,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,11,0.2158329832109451,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,12,0.1973452185452496,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,13,0.2072762530955567,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,14,2.709272524106914,0.8806184733028835,2
+27,classifier__length_only,complexity__POLKE__word_count,15,2.552640945151441,0.8806184733028835,2
+27,classifier__length_only,complexity__LCA__wordtypes,1,1.752633587721423,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,2,1.061930747400016,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,3,1.7303864206072972,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,4,0.925459929855804,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,5,0.5366218582602946,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,6,0.2512482019157159,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,7,0.3564371969482728,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,8,0.288017523125316,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,9,0.2849080140359383,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,10,0.1700762779902856,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,11,0.642233581466943,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,12,0.7443909585492583,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,13,0.8363914895654935,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,14,1.8401406959412687,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__wordtypes,15,1.703067017893631,0.8749295667517972,3
+27,classifier__length_only,complexity__LCA__ndw,1,1.8757525175915528,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,2,1.1732377484348886,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,3,1.9276745959516604,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,4,1.0152917050970474,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,5,0.5492223472588416,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,6,0.2711182030070159,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,7,0.283492666275642,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,8,0.2299732163142584,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,9,0.2502718649888804,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,10,0.1216080075880696,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,11,0.5596636280560526,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,12,0.7401654732175464,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,13,0.9878686720006952,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,14,1.4871452115548431,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__ndw,15,1.2972316447978145,0.8513145001423206,4
+27,classifier__length_only,complexity__LCA__lextypes,1,2.015415686426385,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,2,0.9919145518053448,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,3,0.6366193257554601,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,4,0.7429900490829657,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,5,0.2563997945951886,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,6,0.3397404252762144,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,7,0.107392128730013,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,8,0.4140721408119718,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,9,0.1224202791647261,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,10,0.869052312755124,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,11,0.1974466010080529,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,12,0.1009779151749313,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,13,0.3815257725375732,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,14,2.812073414439836,0.7950494371599193,5
+27,classifier__length_only,complexity__LCA__lextypes,15,1.937701159835002,0.7950494371599193,5
+27,classifier__length_only,complexity__TAALES__Word Count,1,1.577091808657076,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,2,0.6905898710638672,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,3,0.9748576372295312,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,4,0.5699516219927158,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,5,0.5904761840411095,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,6,0.6500226113492317,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,7,0.3215230262340891,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,8,0.2504583852078004,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,9,0.204761942865138,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,10,0.5797485375405093,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,11,0.3606651205105183,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,12,0.266268176613774,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,13,0.2544543314510438,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,14,1.3429234807964248,0.6795293863480496,6
+27,classifier__length_only,complexity__TAALES__Word Count,15,1.559148059667915,0.6795293863480496,6
+27,classifier__length_only,complexity__L2SCA__W,1,0.4838679260391893,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,2,0.2168401671666955,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,3,0.2152076200763141,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,4,0.1591108094849274,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,5,0.1840899303740735,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,6,0.3189384491399397,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,7,0.1622800758886049,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,8,0.2274896945276657,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,9,0.1823567508415791,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,10,0.3737269023230859,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,11,0.1673228779306934,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,12,0.232153628121271,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,13,0.1328169894002133,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,14,2.159644660365503,0.49172883520018823,7
+27,classifier__length_only,complexity__L2SCA__W,15,2.1600860463230678,0.49172883520018823,7
+27,classifier__length_only,complexity__TAASSC__nwords,1,0.2418077537598822,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,2,0.3758224802089746,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,3,0.2887450170656461,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,4,0.1973364932753276,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,5,0.203426530437952,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,6,0.247739229096798,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,7,0.1839560818806239,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,8,0.1458981429719061,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,9,0.1313204764799619,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,10,0.3559551192647781,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,11,0.2129525571542248,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,12,0.3062895210378987,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,13,0.2849901622581504,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,14,1.2674638209642213,0.3888121373211618,8
+27,classifier__length_only,complexity__TAASSC__nwords,15,1.388478673961082,0.3888121373211618,8
+27,classifier__length_only,complexity__LCA__wordtokens,1,0.5354966027939123,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,2,0.4329078159217119,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,3,0.4700765014104258,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,4,0.154442655707687,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,5,0.1963393796297419,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,6,0.2407518248357167,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,7,0.1468438961200352,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,8,0.2399336457550424,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,9,0.179087940618374,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,10,0.4343976250184848,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,11,0.2779725016175704,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,12,0.3382373420219917,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,13,0.0790120459711329,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,14,0.8513964983284001,0.3736999195334369,9
+27,classifier__length_only,complexity__LCA__wordtokens,15,1.0286025172513258,0.3736999195334369,9

@@ -1,0 +1,46 @@
+model_validation_rank,experiment,feature,output,mean_absolute_contribution,overall_mean_absolute_contribution,overall_feature_rank
+14,classifier__length_only,complexity__LCA__ndw,A1,1.148478032944937,0.662983532554674,1
+14,classifier__length_only,complexity__LCA__ndw,A2,0.5847235947151579,0.662983532554674,1
+14,classifier__length_only,complexity__LCA__ndw,B1,0.443762719122648,0.662983532554674,1
+14,classifier__length_only,complexity__LCA__ndw,B2,0.367396124181448,0.662983532554674,1
+14,classifier__length_only,complexity__LCA__ndw,C1,0.7705571918091787,0.662983532554674,1
+14,classifier__length_only,complexity__TAALES__Word Count,A1,1.2140716077994795,0.6356132743440093,2
+14,classifier__length_only,complexity__TAALES__Word Count,A2,1.0477835508200222,0.6356132743440093,2
+14,classifier__length_only,complexity__TAALES__Word Count,B1,0.1420683627315292,0.6356132743440093,2
+14,classifier__length_only,complexity__TAALES__Word Count,B2,0.5304141298328469,0.6356132743440093,2
+14,classifier__length_only,complexity__TAALES__Word Count,C1,0.2437287205361684,0.6356132743440093,2
+14,classifier__length_only,complexity__LCA__wordtypes,A1,1.0597658637056862,0.6221769846032118,3
+14,classifier__length_only,complexity__LCA__wordtypes,A2,0.5510666694342513,0.6221769846032118,3
+14,classifier__length_only,complexity__LCA__wordtypes,B1,0.3865541180606748,0.6221769846032118,3
+14,classifier__length_only,complexity__LCA__wordtypes,B2,0.2947708946322651,0.6221769846032118,3
+14,classifier__length_only,complexity__LCA__wordtypes,C1,0.8187273771831819,0.6221769846032118,3
+14,classifier__length_only,complexity__LCA__lextypes,A1,0.7566577823043261,0.444133370259992,4
+14,classifier__length_only,complexity__LCA__lextypes,A2,0.1584659451873626,0.444133370259992,4
+14,classifier__length_only,complexity__LCA__lextypes,B1,0.1608228935441704,0.444133370259992,4
+14,classifier__length_only,complexity__LCA__lextypes,B2,0.6781606240367277,0.444133370259992,4
+14,classifier__length_only,complexity__LCA__lextypes,C1,0.4665596062273728,0.444133370259992,4
+14,classifier__length_only,complexity__LCA__lextokens,A1,1.128494490730037,0.3468537340465686,5
+14,classifier__length_only,complexity__LCA__lextokens,A2,0.1563446622448543,0.3468537340465686,5
+14,classifier__length_only,complexity__LCA__lextokens,B1,0.1003480981652861,0.3468537340465686,5
+14,classifier__length_only,complexity__LCA__lextokens,B2,0.0486142648390426,0.3468537340465686,5
+14,classifier__length_only,complexity__LCA__lextokens,C1,0.3004671542536231,0.3468537340465686,5
+14,classifier__length_only,complexity__POLKE__word_count,A1,0.309458346202345,0.30148129662200707,6
+14,classifier__length_only,complexity__POLKE__word_count,A2,0.461548118538678,0.30148129662200707,6
+14,classifier__length_only,complexity__POLKE__word_count,B1,0.1458652820541084,0.30148129662200707,6
+14,classifier__length_only,complexity__POLKE__word_count,B2,0.3700692206990355,0.30148129662200707,6
+14,classifier__length_only,complexity__POLKE__word_count,C1,0.2204655156158684,0.30148129662200707,6
+14,classifier__length_only,complexity__TAASSC__nwords,A1,0.1805869968037202,0.23247651515312223,7
+14,classifier__length_only,complexity__TAASSC__nwords,A2,0.203990522497311,0.23247651515312223,7
+14,classifier__length_only,complexity__TAASSC__nwords,B1,0.2748905056247574,0.23247651515312223,7
+14,classifier__length_only,complexity__TAASSC__nwords,B2,0.2461528123591645,0.23247651515312223,7
+14,classifier__length_only,complexity__TAASSC__nwords,C1,0.2567617384806582,0.23247651515312223,7
+14,classifier__length_only,complexity__LCA__wordtokens,A1,0.2842840745662005,0.2154576708953435,8
+14,classifier__length_only,complexity__LCA__wordtokens,A2,0.1739652191413728,0.2154576708953435,8
+14,classifier__length_only,complexity__LCA__wordtokens,B1,0.0857919976352079,0.2154576708953435,8
+14,classifier__length_only,complexity__LCA__wordtokens,B2,0.3150994334578848,0.2154576708953435,8
+14,classifier__length_only,complexity__LCA__wordtokens,C1,0.2181476296760515,0.2154576708953435,8
+14,classifier__length_only,complexity__L2SCA__W,A1,0.1654443687465012,0.2150100477598967,9
+14,classifier__length_only,complexity__L2SCA__W,A2,0.1393131927672145,0.2150100477598967,9
+14,classifier__length_only,complexity__L2SCA__W,B1,0.0953458395909806,0.2150100477598967,9
+14,classifier__length_only,complexity__L2SCA__W,B2,0.3512180414788455,0.2150100477598967,9
+14,classifier__length_only,complexity__L2SCA__W,C1,0.3237287962159418,0.2150100477598967,9

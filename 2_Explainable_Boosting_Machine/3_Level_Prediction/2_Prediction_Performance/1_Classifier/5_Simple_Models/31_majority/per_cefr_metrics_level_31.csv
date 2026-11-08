@@ -1,0 +1,11 @@
+model_validation_rank,experiment,task,algorithm,feature_set,split,rounds,class_weight,label,accuracy,accuracy_standard_deviation,precision,precision_standard_deviation,recall,recall_standard_deviation,f1-score,f1-score_standard_deviation,support
+31,classifier__majority,level,classifier,majority,validation,200,none,A1,1.0,0.0,0.4785821019425535,0.005601567423949967,1.0,0.0,0.6473527595306271,0.005125716785391806,28825.0
+31,classifier__majority,level,classifier,majority,validation,200,none,A2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,18953.0
+31,classifier__majority,level,classifier,majority,validation,200,none,B1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,9143.0
+31,classifier__majority,level,classifier,majority,validation,200,none,B2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2546.0
+31,classifier__majority,level,classifier,majority,validation,200,none,C1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,763.0
+31,classifier__majority,level,classifier,majority,test,200,none,A1,1.0,0.0,0.4724623444662737,0.005630994296117049,1.0,0.0,0.641730970223932,0.0051934569600029425,28858.0
+31,classifier__majority,level,classifier,majority,test,200,none,A2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,19516.0
+31,classifier__majority,level,classifier,majority,test,200,none,B1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,9311.0
+31,classifier__majority,level,classifier,majority,test,200,none,B2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2818.0
+31,classifier__majority,level,classifier,majority,test,200,none,C1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,577.0

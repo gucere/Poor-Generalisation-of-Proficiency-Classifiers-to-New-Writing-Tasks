@@ -1,0 +1,13 @@
+model_validation_rank,experiment,output,tool_rank,tool,features,contribution,share
+14,regressor__complexity,overall,1,TAALES,485,0.6878835228690717,0.2718568995433975
+14,regressor__complexity,overall,2,TAASSC,139,0.5395760553523657,0.21324463895302595
+14,regressor__complexity,overall,3,POLKE,618,0.5254503021224172,0.20766203179768655
+14,regressor__complexity,overall,4,LCA,33,0.4736599442709059,0.18719408098381782
+14,regressor__complexity,overall,5,TAALES_COVERAGE,352,0.2011352144380267,0.07949019560470828
+14,regressor__complexity,overall,6,L2SCA,23,0.10260971118684215,0.04055215311736402
+14,regressor__complexity,numerical_level,1,TAALES,485,0.6878835228690717,0.2718568995433975
+14,regressor__complexity,numerical_level,2,TAASSC,139,0.5395760553523657,0.21324463895302595
+14,regressor__complexity,numerical_level,3,POLKE,618,0.5254503021224172,0.20766203179768655
+14,regressor__complexity,numerical_level,4,LCA,33,0.4736599442709059,0.18719408098381782
+14,regressor__complexity,numerical_level,5,TAALES_COVERAGE,352,0.2011352144380267,0.07949019560470828
+14,regressor__complexity,numerical_level,6,L2SCA,23,0.10260971118684215,0.04055215311736402

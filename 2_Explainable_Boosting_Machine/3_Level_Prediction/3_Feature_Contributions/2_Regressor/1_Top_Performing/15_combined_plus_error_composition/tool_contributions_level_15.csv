@@ -1,0 +1,15 @@
+model_validation_rank,experiment,output,tool_rank,tool,features,contribution,share
+15,regressor__combined_plus_error_composition,overall,1,TAALES,485,0.6793691124249515,0.2679849235601494
+15,regressor__combined_plus_error_composition,overall,2,POLKE,618,0.5504672995948698,0.21713812786946352
+15,regressor__combined_plus_error_composition,overall,3,TAASSC,139,0.5209802164011664,0.2055066103465804
+15,regressor__combined_plus_error_composition,overall,4,LCA,33,0.4450515758218363,0.17555568886731515
+15,regressor__combined_plus_error_composition,overall,5,TAALES_COVERAGE,352,0.20314319413922807,0.08013215843571256
+15,regressor__combined_plus_error_composition,overall,6,L2SCA,23,0.11230602552969647,0.0443003974076678
+15,regressor__combined_plus_error_composition,overall,7,ERRANT,72,0.02378456391506496,0.009382093513111082
+15,regressor__combined_plus_error_composition,numerical_level,1,TAALES,485,0.6793691124249515,0.2679849235601494
+15,regressor__combined_plus_error_composition,numerical_level,2,POLKE,618,0.5504672995948698,0.21713812786946352
+15,regressor__combined_plus_error_composition,numerical_level,3,TAASSC,139,0.5209802164011664,0.2055066103465804
+15,regressor__combined_plus_error_composition,numerical_level,4,LCA,33,0.4450515758218363,0.17555568886731515
+15,regressor__combined_plus_error_composition,numerical_level,5,TAALES_COVERAGE,352,0.20314319413922807,0.08013215843571256
+15,regressor__combined_plus_error_composition,numerical_level,6,L2SCA,23,0.11230602552969647,0.0443003974076678
+15,regressor__combined_plus_error_composition,numerical_level,7,ERRANT,72,0.02378456391506496,0.009382093513111082

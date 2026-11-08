@@ -300,7 +300,7 @@ Each of the three prediction methods is trained on 16 configurations, **48 runs 
 | [6_Validity_Checks](2_Explainable_Boosting_Machine/6_Validity_Checks) | The half-task split, the performance by text length and the one-task-per-level holdout (see Validity Checks below). |
 | [7_Paper](2_Explainable_Boosting_Machine/7_Paper) | The paper's tables and figures, built by `paper_tables.py` (see Paper Tables and Figures below). |
 
-In `2_CEFR_Classification` and `3_Level_Prediction`, the `0_All_Experiments` folders in `2_Prediction_Performance` and `3_Feature_Contributions` hold every model in one table. The full pipeline also writes one folder per model; they repeat these tables and are left out here to keep file paths short.
+In `2_CEFR_Classification` and `3_Level_Prediction`, the `0_All_Experiments` folders in `2_Prediction_Performance` and `3_Feature_Contributions` hold every model in one table. The other folders there split the same results by model, in the layout the pipeline writes: grouped by feature-set family, with one numbered folder per model and the contributions for each CEFR band or course level in `Per_CEFR` or `Per_Level`. Some of these paths are long; see [Long File Paths on Windows](#long-file-paths-on-windows). The `1_Intermediate_Calculations` folders are not included: they hold the fitted models and per-text predictions, which are derived from individual EFCAMDAT texts, and the pipeline recreates them.
 
 | Report | What to inspect |
 | --- | --- |
@@ -373,6 +373,16 @@ Where each part of the paper comes from:
 ## How To Run
 
 Run the commands below from the **repository root**.
+
+### Long File Paths on Windows
+
+Some result files have paths of more than 200 characters inside the repository, so with the default folder name they exceed the Windows limit of 260 characters. Clone into a short folder name with long paths enabled:
+
+```
+git clone -c core.longpaths=true https://github.com/gucere/Poor-Generalisation-of-Proficiency-Classifiers-to-New-Writing-Tasks.git pg
+```
+
+If you download the ZIP instead, extract it with a tool that supports long paths, such as 7-Zip, and rename the extracted folder to something short (for example `C:\pg`); the built-in Windows extractor fails on these files. macOS and Linux are not affected.
 
 ### Python Environments
 

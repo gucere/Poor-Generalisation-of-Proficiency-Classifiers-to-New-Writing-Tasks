@@ -1,0 +1,11 @@
+model_validation_rank,experiment,task,algorithm,feature_set,split,rounds,class_weight,label,accuracy,accuracy_standard_deviation,precision,precision_standard_deviation,recall,recall_standard_deviation,f1-score,f1-score_standard_deviation,support
+32,regressor__median,level,regressor,median,validation,200,none,A1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,28825.0
+32,regressor__median,level,regressor,median,validation,200,none,A2,1.0,0.0,0.3146770712269633,0.004597150928642841,1.0,0.0,0.4787138653498857,0.005319309584410896,18953.0
+32,regressor__median,level,regressor,median,validation,200,none,B1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,9143.0
+32,regressor__median,level,regressor,median,validation,200,none,B2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2546.0
+32,regressor__median,level,regressor,median,validation,200,none,C1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,763.0
+32,regressor__median,level,regressor,median,test,200,none,A1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,28858.0
+32,regressor__median,level,regressor,median,test,200,none,A2,1.0,0.0,0.3195153896529142,0.004698150159828292,1.0,0.0,0.4842920244180853,0.005394855486676734,19516.0
+32,regressor__median,level,regressor,median,test,200,none,B1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,9311.0
+32,regressor__median,level,regressor,median,test,200,none,B2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2818.0
+32,regressor__median,level,regressor,median,test,200,none,C1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,577.0
