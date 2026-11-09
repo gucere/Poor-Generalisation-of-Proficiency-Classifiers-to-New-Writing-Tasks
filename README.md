@@ -318,7 +318,8 @@ The main results come from one learner split. [cross_validation.py](2_Explainabl
 
 - **Folds:** the 344,982 training and validation texts are split into 10 folds, grouped by learner and stratified by course level (seed 42). The test texts are never read. The fold assignments list text IDs and are not included; [fold_manifest.json](2_Explainable_Boosting_Machine/5_Cross_Validation/1_Folds/fold_manifest.json) records how they were made.
 - **Fits:** each fold trains on about 310,000 texts and is evaluated on the other 34,500, with the same code and settings as the main runs. The length and duplicate lists are applied as fixed feature definitions.
-- **Paper run:** the level classifier and regressor of `combined` and of the main model, plus the majority and median baselines: 60 jobs in [jobs.csv](2_Explainable_Boosting_Machine/5_Cross_Validation/2_Jobs/jobs.csv). Each job folder in `2_Jobs` holds its metrics, excluded features, feature importance and tool and dimension contributions.
+- **Paper run:** the level classifier and regressor of `combined` and of the main model, plus the majority and median baselines: 60 jobs. Each job folder in `2_Jobs` holds its metrics, excluded features, feature importance and tool and dimension contributions.
+- **Added after the paper** (November 2026): the level classifier and regressor of the strictest set, `combined_without_length_correlated_and_duplicate_features`, 20 more jobs, so [jobs.csv](2_Explainable_Boosting_Machine/5_Cross_Validation/2_Jobs/jobs.csv) lists 80. The other results did not change. The paper's Table 4 does not include this run, but [table_4_cross_validation.csv](2_Explainable_Boosting_Machine/7_Paper/1_Tables/table_4_cross_validation.csv) (and `paper_tables.md` and `.tex`) now has two extra rows for the strictest models, and [figure_5_f1_by_level.png](2_Explainable_Boosting_Machine/7_Paper/2_Figures/figure_5_f1_by_level.png) a third line for the strictest classifier. Three new tables give the strictest models' versions of tables 6, 6b and 7: [table_6_group_importance_strictest.csv](2_Explainable_Boosting_Machine/7_Paper/1_Tables/table_6_group_importance_strictest.csv), [table_6b_dimension_shares_by_level_strictest.csv](2_Explainable_Boosting_Machine/7_Paper/1_Tables/table_6b_dimension_shares_by_level_strictest.csv) and [table_7_top_features_strictest.csv](2_Explainable_Boosting_Machine/7_Paper/1_Tables/table_7_top_features_strictest.csv). The paper's tables and the other figures are unchanged. The `rank` column of `cv_summary.csv` now counts the strictest models, so the regressors and baselines are one or two places lower than before.
 
 | Result file in [3_Results](2_Explainable_Boosting_Machine/5_Cross_Validation/3_Results) | Contents |
 | --- | --- |
@@ -331,6 +332,8 @@ The main results come from one learner split. [cross_validation.py](2_Explainabl
 | `cv_feature_stability.csv` | Each feature's mean importance, mean rank and number of folds in which it is among a model's 20 most important features. |
 
 The main classifier reaches level macro F1 0.900 ± 0.006 against 0.902 ± 0.006 with all features (corrected t-test p = 0.10), and CEFR macro F1 0.953 against 0.955 (p < 0.001). The main regressor's MAE is 0.619 against 0.604 levels (p < 0.001).
+
+The strictest classifier, with 1,158 features instead of the main model's 1,675, reaches level macro F1 0.898 ± 0.006 (p = 0.15 against the main model, p = 0.035 against all features) and CEFR macro F1 0.952 ± 0.003 (p = 0.26 against the main model, p = 0.001 against all features). Its regressor's MAE is 0.630 levels (p < 0.001 against the main model).
 
 #### Validity Checks
 
@@ -349,7 +352,7 @@ Trained on 4 of the 8 tasks per level, the main classifier reaches level macro F
 | --- | --- |
 | [paper_tables.py](2_Explainable_Boosting_Machine/7_Paper/paper_tables.py) | Collects the tables and figures from the results above; it can be rerun whenever results change. |
 | [camera_ready_analyses.py](2_Explainable_Boosting_Machine/7_Paper/camera_ready_analyses.py) | Analyses added for the camera-ready version, computed from the saved test predictions without training any model: 95% confidence intervals of the test F1 and the within-level length check. |
-| [1_Tables](2_Explainable_Boosting_Machine/7_Paper/1_Tables) | All paper tables as CSV, plus [paper_tables.md](2_Explainable_Boosting_Machine/7_Paper/1_Tables/paper_tables.md) and `paper_tables.tex` with all of them together. |
+| [1_Tables](2_Explainable_Boosting_Machine/7_Paper/1_Tables) | All paper tables as CSV, plus [paper_tables.md](2_Explainable_Boosting_Machine/7_Paper/1_Tables/paper_tables.md) and `paper_tables.tex` with all of them together. The `_strictest` tables and the strictest rows of table 4 come from the cross-validation added after the paper. |
 | [2_Figures](2_Explainable_Boosting_Machine/7_Paper/2_Figures) | Dimension and tool shares by level, confusion matrices, performance by text length and F1 by level (PNG and PDF). |
 
 Where each part of the paper comes from:
@@ -362,7 +365,7 @@ Where each part of the paper comes from:
 | Per-band and per-level test results | the `per_cefr_metrics` and `per_level_metrics` files in [3_Level_Prediction/2_Prediction_Performance/0_All_Experiments](2_Explainable_Boosting_Machine/3_Level_Prediction/2_Prediction_Performance/0_All_Experiments) |
 | Cross-validation results | [5_Cross_Validation/3_Results](2_Explainable_Boosting_Machine/5_Cross_Validation/3_Results), [table_4_cross_validation.csv](2_Explainable_Boosting_Machine/7_Paper/1_Tables/table_4_cross_validation.csv) |
 | Dimension and tool shares | `cv_dimension_shares.csv` and `cv_tool_shares.csv` in [5_Cross_Validation/3_Results](2_Explainable_Boosting_Machine/5_Cross_Validation/3_Results) |
-| Stable individual features | `cv_feature_stability.csv`, [table_7_top_features.csv](2_Explainable_Boosting_Machine/7_Paper/1_Tables/table_7_top_features.csv) |
+| Stable individual features | `cv_feature_stability.csv`, [table_7_top_features.csv](2_Explainable_Boosting_Machine/7_Paper/1_Tables/table_7_top_features.csv) (strictest models, not in the paper: [table_7_top_features_strictest.csv](2_Explainable_Boosting_Machine/7_Paper/1_Tables/table_7_top_features_strictest.csv)) |
 | 95% confidence intervals of the test F1 (Sections 3.4 and 4.1, CI column of the per-level test table in Appendix B) | [test_confidence_intervals.csv](2_Explainable_Boosting_Machine/7_Paper/1_Tables/test_confidence_intervals.csv) |
 | Performance by text length | [table_8_length_check.csv](2_Explainable_Boosting_Machine/7_Paper/1_Tables/table_8_length_check.csv) |
 | Within-level length check (Section 4.2) | [within_level_length_check.csv](2_Explainable_Boosting_Machine/6_Validity_Checks/2_Length_Check/within_level_length_check.csv), [within_level_length_fifths.csv](2_Explainable_Boosting_Machine/6_Validity_Checks/2_Length_Check/within_level_length_fifths.csv) |
@@ -422,7 +425,7 @@ It prepares the learner split, calculates the training rankings, trains the CEFR
 ### 4. Run the Cross-Validation
 
 ```powershell
-python "2_Explainable_Boosting_Machine/5_Cross_Validation/cross_validation.py" prepare --tasks level --experiments combined combined_without_length_correlated_features majority median
+python "2_Explainable_Boosting_Machine/5_Cross_Validation/cross_validation.py" prepare --tasks level --experiments combined combined_without_length_correlated_features combined_without_length_correlated_and_duplicate_features majority median
 python "2_Explainable_Boosting_Machine/5_Cross_Validation/cross_validation.py" run --parallel 2
 python "2_Explainable_Boosting_Machine/5_Cross_Validation/cross_validation.py" status
 python "2_Explainable_Boosting_Machine/5_Cross_Validation/cross_validation.py" summarize

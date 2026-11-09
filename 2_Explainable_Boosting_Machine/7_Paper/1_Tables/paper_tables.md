@@ -94,6 +94,8 @@ Held-out test results of the frozen models (± learner-cluster bootstrap SD).
 | All features | regressor |  |  |  | 0.604 ± 0.006 | 0.948 ± 0.001 | -0.0159 (<0.001) |  |
 | All − counts and length-dependent (main) | classifier | 0.900 ± 0.006 | 0.978 ± 0.001 | 0.953 ± 0.003 |  |  |  | -0.0014 (0.102) |
 | All − counts and length-dependent (main) | regressor |  |  |  | 0.619 ± 0.005 | 0.946 ± 0.001 |  | +0.0159 (<0.001) |
+| All − counts, length-dependent and near-duplicates | classifier | 0.898 ± 0.006 | 0.977 ± 0.001 | 0.952 ± 0.003 |  |  | -0.0019 (0.149) | -0.0033 (0.035) |
+| All − counts, length-dependent and near-duplicates | regressor |  |  |  | 0.630 ± 0.006 | 0.945 ± 0.001 | +0.0102 (<0.001) | +0.0261 (<0.001) |
 | Majority class / median level | classifier | 0.026 ± 0.000 | 0.000 ± 0.000 | 0.128 ± 0.000 |  |  | -0.8747 (<0.001) | -0.8761 (<0.001) |
 | Majority class / median level | regressor |  |  |  | 2.243 ± 0.000 |  | +1.6238 (<0.001) | +1.6397 (<0.001) |
 
@@ -150,6 +152,59 @@ Complexity-dimension shares (%) of the main level classifier per course level (m
 | 14 | 60.8 | 4.2 | 21.0 | 12.9 | 1.1 |
 | 15 | 66.4 | 1.8 | 19.5 | 11.1 | 1.2 |
 
+## table_6_group_importance_strictest
+
+Share of the strictest models' contributions per feature group (tool) and complexity dimension: mean absolute summed contribution of the group's features, normalised to 100%; classifier averaged over the 15 level outputs.
+
+| Model | Group | Dimension | Features | Share (validation) | Share (CV) |
+|---|---|---|---|---|---|
+| classifier | TAALES | lexical_sophistication | 334 | 44.1% | 43.6 ± 0.4% |
+| classifier | TAALES_COVERAGE | lexical_sophistication | 46 | 8.6% | 8.6 ± 0.4% |
+| classifier | LCA | lexical_diversity_and_density | 12 | 4.4% | 4.6 ± 0.1% |
+| classifier | L2SCA | syntactic_complexity | 12 | 2.8% | 2.9 ± 0.2% |
+| classifier | TAASSC | syntactic_complexity | 126 | 19.8% | 20.1 ± 0.2% |
+| classifier | POLKE | grammatical_constructions | 579 | 18.8% | 18.7 ± 0.2% |
+| classifier | ERRANT | accuracy | 49 | 1.5% | 1.5 ± 0.0% |
+| classifier | dimension: lexical_sophistication | lexical_sophistication | 380 |  | 51.2 ± 0.3% |
+| classifier | dimension: lexical_diversity_and_density | lexical_diversity_and_density | 12 |  | 4.8 ± 0.2% |
+| classifier | dimension: syntactic_complexity | syntactic_complexity | 138 |  | 22.7 ± 0.2% |
+| classifier | dimension: grammatical_constructions | grammatical_constructions | 580 |  | 19.7 ± 0.2% |
+| classifier | dimension: accuracy | accuracy | 49 |  | 1.6 ± 0.0% |
+| regressor | TAALES | lexical_sophistication | 334 | 27.0% | 27.2 ± 0.1% |
+| regressor | TAALES_COVERAGE | lexical_sophistication | 46 | 8.0% | 7.9 ± 0.1% |
+| regressor | LCA | lexical_diversity_and_density | 12 | 5.0% | 5.0 ± 0.1% |
+| regressor | L2SCA | syntactic_complexity | 12 | 1.7% | 1.7 ± 0.1% |
+| regressor | TAASSC | syntactic_complexity | 126 | 31.9% | 31.5 ± 0.2% |
+| regressor | POLKE | grammatical_constructions | 579 | 25.6% | 25.9 ± 0.2% |
+| regressor | ERRANT | accuracy | 49 | 0.8% | 0.9 ± 0.0% |
+| regressor | dimension: lexical_sophistication | lexical_sophistication | 380 |  | 33.5 ± 0.1% |
+| regressor | dimension: lexical_diversity_and_density | lexical_diversity_and_density | 12 |  | 5.2 ± 0.1% |
+| regressor | dimension: syntactic_complexity | syntactic_complexity | 138 |  | 33.5 ± 0.2% |
+| regressor | dimension: grammatical_constructions | grammatical_constructions | 580 |  | 26.9 ± 0.2% |
+| regressor | dimension: accuracy | accuracy | 49 |  | 0.9 ± 0.0% |
+
+## table_6b_dimension_shares_by_level_strictest
+
+Complexity-dimension shares (%) of the strictest level classifier per course level (mean over the 10 CV folds).
+
+| Level | lexical_sophistication | lexical_diversity_and_density | syntactic_complexity | grammatical_constructions | accuracy |
+|---|---|---|---|---|---|
+| 1 | 29.4 | 5.0 | 28.3 | 36.3 | 1.0 |
+| 2 | 38.9 | 6.4 | 24.5 | 29.0 | 1.2 |
+| 3 | 42.8 | 7.4 | 19.4 | 28.2 | 2.3 |
+| 4 | 33.5 | 9.9 | 25.9 | 28.6 | 2.1 |
+| 5 | 42.1 | 6.8 | 23.8 | 22.9 | 4.4 |
+| 6 | 35.9 | 6.3 | 23.4 | 31.0 | 3.4 |
+| 7 | 36.6 | 9.1 | 22.2 | 29.6 | 2.4 |
+| 8 | 42.4 | 5.3 | 22.8 | 27.2 | 2.2 |
+| 9 | 43.0 | 7.6 | 26.1 | 20.7 | 2.6 |
+| 10 | 37.8 | 6.8 | 29.0 | 23.7 | 2.7 |
+| 11 | 51.8 | 5.3 | 22.6 | 18.9 | 1.3 |
+| 12 | 43.6 | 6.3 | 24.1 | 24.3 | 1.6 |
+| 13 | 52.6 | 2.9 | 24.6 | 19.0 | 1.0 |
+| 14 | 59.4 | 4.5 | 20.6 | 14.3 | 1.2 |
+| 15 | 65.2 | 2.0 | 19.7 | 11.9 | 1.2 |
+
 ## table_7_top_features
 
 The 20 most important features of the main models (mean absolute contribution).
@@ -196,6 +251,53 @@ The 20 most important features of the main models (mean absolute contribution).
 | regressor | 18 | Freq_HAL_CW | TAALES | lexical_sophistication | 0.080 ± 0.004 | 10 |
 | regressor | 19 | infinitive_prop | TAASSC | syntactic_complexity | 0.080 ± 0.002 | 9 |
 | regressor | 20 | SUBTLEXus_Freq_CW | TAALES | lexical_sophistication | 0.077 ± 0.003 | 7 |
+
+## table_7_top_features_strictest
+
+The 20 most important features of the strictest models (mean absolute contribution).
+
+| Model | Rank | Feature | Tool | Dimension | Mean |contribution| (CV) | Folds in top 20 |
+|---|---|---|---|---|---|---|
+| classifier | 1 | nonfinite_prop | TAASSC | syntactic_complexity | 0.726 ± 0.035 | 10 |
+| classifier | 2 | det_nominal | TAASSC | syntactic_complexity | 0.721 ± 0.051 | 10 |
+| classifier | 3 | Kuperman_AoA_CW | TAALES | lexical_sophistication | 0.655 ± 0.023 | 10 |
+| classifier | 4 | pp1 | TAASSC | syntactic_complexity | 0.586 ± 0.021 | 10 |
+| classifier | 5 | MRC_Meaningfulness_AW | TAALES | lexical_sophistication | 0.524 ± 0.022 | 10 |
+| classifier | 6 | aoe_inverse_average | TAALES | lexical_sophistication | 0.489 ± 0.013 | 10 |
+| classifier | 7 | poss_nominal | TAASSC | syntactic_complexity | 0.473 ± 0.023 | 10 |
+| classifier | 8 | Kuperman_AoA_AW | TAALES | lexical_sophistication | 0.450 ± 0.035 | 10 |
+| classifier | 9 | aoe_index_above_threshold_40 | TAALES | lexical_sophistication | 0.379 ± 0.017 | 10 |
+| classifier | 10 | Brysbaert_Concreteness_Combined_CW | TAALES | lexical_sophistication | 0.357 ± 0.025 | 10 |
+| classifier | 11 | polke_67_per_100_words | POLKE | grammatical_constructions | 0.352 ± 0.017 | 10 |
+| classifier | 12 | nn_concrete | TAASSC | syntactic_complexity | 0.348 ± 0.009 | 10 |
+| classifier | 13 | MRC_Imageability_CW | TAALES | lexical_sophistication | 0.336 ± 0.011 | 10 |
+| classifier | 14 | polke_82_per_100_words | POLKE | grammatical_constructions | 0.328 ± 0.023 | 10 |
+| classifier | 15 | OLDF_CW | TAALES | lexical_sophistication | 0.319 ± 0.017 | 10 |
+| classifier | 16 | nn_animate | TAASSC | syntactic_complexity | 0.316 ± 0.007 | 10 |
+| classifier | 17 | BG_Mean_FW | TAALES | lexical_sophistication | 0.302 ± 0.017 | 7 |
+| classifier | 18 | amod_nominal | TAASSC | syntactic_complexity | 0.297 ± 0.013 | 7 |
+| classifier | 19 | hyper_noun_Sav_Pav | TAALES | lexical_sophistication | 0.296 ± 0.015 | 5 |
+| classifier | 20 | BG_Mean_CW | TAALES | lexical_sophistication | 0.293 ± 0.017 | 6 |
+| regressor | 1 | mltu | TAASSC | syntactic_complexity | 0.209 ± 0.004 | 10 |
+| regressor | 2 | det_nominal | TAASSC | syntactic_complexity | 0.200 ± 0.005 | 10 |
+| regressor | 3 | det_dep | TAASSC | syntactic_complexity | 0.199 ± 0.007 | 10 |
+| regressor | 4 | finite_ind_clause | TAASSC | syntactic_complexity | 0.146 ± 0.005 | 10 |
+| regressor | 5 | nonfinite_prop | TAASSC | syntactic_complexity | 0.121 ± 0.003 | 10 |
+| regressor | 6 | polke_67_per_100_words | POLKE | grammatical_constructions | 0.120 ± 0.002 | 10 |
+| regressor | 7 | pp1 | TAASSC | syntactic_complexity | 0.116 ± 0.003 | 10 |
+| regressor | 8 | Kuperman_AoA_AW | TAALES_COVERAGE | lexical_sophistication | 0.113 ± 0.005 | 10 |
+| regressor | 9 | Brysbaert_Concreteness_Combined_CW | TAALES | lexical_sophistication | 0.107 ± 0.003 | 10 |
+| regressor | 10 | poss_dep | TAASSC | syntactic_complexity | 0.101 ± 0.001 | 10 |
+| regressor | 11 | amod_nominal | TAASSC | syntactic_complexity | 0.094 ± 0.002 | 10 |
+| regressor | 12 | polke_82_per_100_words | POLKE | grammatical_constructions | 0.093 ± 0.003 | 10 |
+| regressor | 13 | Kuperman_AoA_CW | TAALES | lexical_sophistication | 0.082 ± 0.007 | 10 |
+| regressor | 14 | jj_attributive | TAASSC | syntactic_complexity | 0.081 ± 0.003 | 10 |
+| regressor | 15 | COCA_spoken_bi_prop_30k | TAALES | lexical_sophistication | 0.079 ± 0.006 | 10 |
+| regressor | 16 | SUBTLEXus_Freq_CW | TAALES | lexical_sophistication | 0.077 ± 0.003 | 10 |
+| regressor | 17 | ls1 | LCA | lexical_diversity_and_density | 0.073 ± 0.002 | 9 |
+| regressor | 18 | poss_nominal | TAASSC | syntactic_complexity | 0.069 ± 0.004 | 9 |
+| regressor | 19 | LD_Mean_RT_SD_CW | TAALES | lexical_sophistication | 0.068 ± 0.003 | 7 |
+| regressor | 20 | Freq_HAL_CW | TAALES | lexical_sophistication | 0.067 ± 0.005 | 6 |
 
 ## table_8_length_check
 

@@ -240,14 +240,15 @@ def cv_table(report):
                    table[[column for column in order if column in table]].fillna(''))
 
 
-def group_importance_tables(report):
-    """Feature-group importance of the main models: tool shares (validation and CV) and complexity-dimension shares (CV)."""
+def group_importance_tables(report, family=MAIN, suffix='', who='main'):
+    """Feature-group importance of the main (or another feature set's) models: tool shares (validation and CV) and
+    complexity-dimension shares (CV)."""
     tools = read(LEVEL / '3_Feature_Contributions/0_All_Experiments/tool_contributions_level_all_experiments.csv', dtype={'output': str})
     cv_tools = read(CV / 'cv_tool_shares.csv', dtype={'output': str})
     cv_dimensions = read(CV / 'cv_dimension_shares.csv', dtype={'output': str})
     rows = []
     for algorithm, output in (('classifier', 'overall'), ('regressor', 'numerical_level')):
-        experiment = f'{algorithm}__{MAIN}'
+        experiment = f'{algorithm}__{family}'
         for tool in TOOLS:
             row = {'Model': algorithm, 'Group': tool, 'Dimension': DIMENSIONS[tool]}
             if tools is not None:
@@ -267,25 +268,30 @@ def group_importance_tables(report):
                     rows.append({'Model': algorithm, 'Group': f'dimension: {dimension}', 'Dimension': dimension, 'Features': round(match.features.iloc[0]),
                                  'Share (CV)': f'{100 * match.share_mean.iloc[0]:.1f} ± {100 * match.share_standard_deviation.iloc[0]:.1f}%'})
     if rows:
-        report.add('table_6_group_importance', 'Share of the main models\' contributions per feature group (tool) and complexity '
+        report.add(f'table_6_group_importance{suffix}', f'Share of the {who} models\' contributions per feature group (tool) and complexity '
                    'dimension: mean absolute summed contribution of the group\'s features, normalised to 100%; '
                    'classifier averaged over the 15 level outputs.', pd.DataFrame(rows).fillna(''))
     # Per level and per CEFR band (classifier): dimension shares from the CV, tool shares from validation.
     if cv_dimensions is not None:
-        table = cv_dimensions[cv_dimensions.experiment.eq(f'classifier__{MAIN}') & cv_dimensions.task.eq('level') & cv_dimensions.output.ne('overall')]
+        table = cv_dimensions[cv_dimensions.experiment.eq(f'classifier__{family}') & cv_dimensions.task.eq('level') & cv_dimensions.output.ne('overall')]
         if not table.empty:
             wide = table.pivot_table(index='output', columns='dimension', values='share_mean')
             wide = wide.loc[sorted(wide.index, key=int), [d for d in DIMENSION_ORDER if d in wide]]
             shown = (100 * wide).round(1).reset_index().rename(columns={'output': 'Level'})
-            report.add('table_6b_dimension_shares_by_level', 'Complexity-dimension shares (%) of the main level classifier per course '
+            report.add(f'table_6b_dimension_shares_by_level{suffix}', f'Complexity-dimension shares (%) of the {who} level classifier per course '
                        'level (mean over the 10 CV folds).', shown)
 
 
-def top_feature_table(report):
+def strictest_group_importance_tables(report):
+    """The same for the strictest models (cross-validated after the paper)."""
+    group_importance_tables(report, STRICTEST, '_strictest', 'strictest')
+
+
+def top_feature_table(report, family=MAIN, suffix='', who='main'):
     stability = read(CV / 'cv_feature_stability.csv')
     rows = []
     for algorithm in ('classifier', 'regressor'):
-        experiment = f'{algorithm}__{MAIN}'
+        experiment = f'{algorithm}__{family}'
         if stability is not None and stability.experiment.eq(experiment).any():
             table = stability[stability.experiment.eq(experiment) & stability.task.eq('level')].nsmallest(20, 'overall_rank')
             for _, row in table.iterrows():
@@ -303,8 +309,12 @@ def top_feature_table(report):
                 rows.append({'Model': algorithm, 'Rank': int(row.overall_feature_rank), 'Feature': feature, 'Tool': source,
                              'Dimension': DIMENSIONS[source], 'Mean |contribution| (validation)': f'{row.overall_mean_absolute_contribution:.3f}'})
     if rows:
-        report.add('table_7_top_features', 'The 20 most important features of the main models (mean absolute contribution).',
+        report.add(f'table_7_top_features{suffix}', f'The 20 most important features of the {who} models (mean absolute contribution).',
                    pd.DataFrame(rows).fillna(''))
+
+
+def strictest_top_feature_table(report):
+    top_feature_table(report, STRICTEST, '_strictest', 'strictest')
 
 
 def length_table(report):
@@ -498,7 +508,8 @@ def per_level_figure():
 def main():
     report = Report()
     log('Tables:')
-    for build in (data_table, feature_set_table, validation_table, cv_table, group_importance_tables, top_feature_table, length_table, topic_table, task_table):
+    for build in (data_table, feature_set_table, validation_table, cv_table, group_importance_tables, strictest_group_importance_tables,
+                  top_feature_table, strictest_top_feature_table, length_table, topic_table, task_table):
         build(report)
     report.write()
     log('Figures:')

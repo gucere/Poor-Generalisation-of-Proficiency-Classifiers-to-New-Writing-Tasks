@@ -1,0 +1,25 @@
+﻿Model,Group,Dimension,Features,Share (validation),Share (CV)
+classifier,TAALES,lexical_sophistication,334,44.1%,43.6 ± 0.4%
+classifier,TAALES_COVERAGE,lexical_sophistication,46,8.6%,8.6 ± 0.4%
+classifier,LCA,lexical_diversity_and_density,12,4.4%,4.6 ± 0.1%
+classifier,L2SCA,syntactic_complexity,12,2.8%,2.9 ± 0.2%
+classifier,TAASSC,syntactic_complexity,126,19.8%,20.1 ± 0.2%
+classifier,POLKE,grammatical_constructions,579,18.8%,18.7 ± 0.2%
+classifier,ERRANT,accuracy,49,1.5%,1.5 ± 0.0%
+classifier,dimension: lexical_sophistication,lexical_sophistication,380,,51.2 ± 0.3%
+classifier,dimension: lexical_diversity_and_density,lexical_diversity_and_density,12,,4.8 ± 0.2%
+classifier,dimension: syntactic_complexity,syntactic_complexity,138,,22.7 ± 0.2%
+classifier,dimension: grammatical_constructions,grammatical_constructions,580,,19.7 ± 0.2%
+classifier,dimension: accuracy,accuracy,49,,1.6 ± 0.0%
+regressor,TAALES,lexical_sophistication,334,27.0%,27.2 ± 0.1%
+regressor,TAALES_COVERAGE,lexical_sophistication,46,8.0%,7.9 ± 0.1%
+regressor,LCA,lexical_diversity_and_density,12,5.0%,5.0 ± 0.1%
+regressor,L2SCA,syntactic_complexity,12,1.7%,1.7 ± 0.1%
+regressor,TAASSC,syntactic_complexity,126,31.9%,31.5 ± 0.2%
+regressor,POLKE,grammatical_constructions,579,25.6%,25.9 ± 0.2%
+regressor,ERRANT,accuracy,49,0.8%,0.9 ± 0.0%
+regressor,dimension: lexical_sophistication,lexical_sophistication,380,,33.5 ± 0.1%
+regressor,dimension: lexical_diversity_and_density,lexical_diversity_and_density,12,,5.2 ± 0.1%
+regressor,dimension: syntactic_complexity,syntactic_complexity,138,,33.5 ± 0.2%
+regressor,dimension: grammatical_constructions,grammatical_constructions,580,,26.9 ± 0.2%
+regressor,dimension: accuracy,accuracy,49,,0.9 ± 0.0%

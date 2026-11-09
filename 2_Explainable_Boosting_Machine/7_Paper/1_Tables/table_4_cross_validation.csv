@@ -3,5 +3,7 @@ All features,classifier,classifier__combined,0.902 ± 0.006,0.979 ± 0.001,0.955
 All features,regressor,regressor__combined,,,,-0.0159 (<0.001),0.604 ± 0.006,0.948 ± 0.001,
 All − counts and length-dependent (main),classifier,classifier__combined_without_length_correlated_features,0.900 ± 0.006,0.978 ± 0.001,0.953 ± 0.003,,,,-0.0014 (0.102)
 All − counts and length-dependent (main),regressor,regressor__combined_without_length_correlated_features,,,,,0.619 ± 0.005,0.946 ± 0.001,+0.0159 (<0.001)
+"All − counts, length-dependent and near-duplicates",classifier,classifier__combined_without_length_correlated_and_duplicate_features,0.898 ± 0.006,0.977 ± 0.001,0.952 ± 0.003,-0.0019 (0.149),,,-0.0033 (0.035)
+"All − counts, length-dependent and near-duplicates",regressor,regressor__combined_without_length_correlated_and_duplicate_features,,,,+0.0102 (<0.001),0.630 ± 0.006,0.945 ± 0.001,+0.0261 (<0.001)
 Majority class / median level,classifier,classifier__majority,0.026 ± 0.000,0.000 ± 0.000,0.128 ± 0.000,-0.8747 (<0.001),,,-0.8761 (<0.001)
 Majority class / median level,regressor,regressor__median,,,,+1.6238 (<0.001),2.243 ± 0.000,,+1.6397 (<0.001)

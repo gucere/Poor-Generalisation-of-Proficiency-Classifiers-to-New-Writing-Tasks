@@ -1,0 +1,8 @@
+tool,output,features,contribution
+LCA,numerical_level,12,0.11943811935080323
+L2SCA,numerical_level,12,0.04137081349181447
+TAASSC,numerical_level,126,0.7763258930450941
+TAALES,numerical_level,334,0.6727552132478871
+TAALES_COVERAGE,numerical_level,46,0.19737630346653906
+POLKE,numerical_level,580,0.6483904498785102
+ERRANT,numerical_level,50,0.020877273207627625
