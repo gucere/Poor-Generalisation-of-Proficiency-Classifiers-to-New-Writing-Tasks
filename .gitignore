@@ -21,6 +21,9 @@ __pycache__/
 2_Explainable_Boosting_Machine/5_Cross_Validation/1_Folds/folds.csv
 2_Explainable_Boosting_Machine/6_Validity_Checks/*/runs/
 2_Explainable_Boosting_Machine/6_Validity_Checks/*/logs/
+2_Explainable_Boosting_Machine/6_Validity_Checks/*/*/runs/
+2_Explainable_Boosting_Machine/6_Validity_Checks/*/*/logs/
+2_Explainable_Boosting_Machine/6_Validity_Checks/0_Topics/
 2_Explainable_Boosting_Machine/5_Cross_Validation/2_Jobs/logs/
 2_Explainable_Boosting_Machine/5_Cross_Validation/2_Jobs/*.log
 

@@ -1,0 +1,16 @@
+split,algorithm,choice,rounds,choices,share
+section_3,classifier,seen_choice,25,51,0.1275
+section_3,classifier,seen_choice,50,281,0.7025
+section_3,classifier,seen_choice,100,46,0.115
+section_3,classifier,seen_choice,200,22,0.055
+section_3,classifier,unseen_choice,10,100,0.25
+section_3,classifier,unseen_choice,25,29,0.0725
+section_3,classifier,unseen_choice,50,54,0.135
+section_3,classifier,unseen_choice,100,103,0.2575
+section_3,classifier,unseen_choice,200,114,0.285
+section_3,regressor,seen_choice,200,400,1.0
+section_3,regressor,unseen_choice,10,83,0.2075
+section_3,regressor,unseen_choice,25,76,0.19
+section_3,regressor,unseen_choice,50,61,0.1525
+section_3,regressor,unseen_choice,100,22,0.055
+section_3,regressor,unseen_choice,200,158,0.395
